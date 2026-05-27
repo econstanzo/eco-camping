@@ -10,15 +10,15 @@ while ejecutando:
     print("4.-Estado actual del camping")
     print("5.-Salir")
     try:
-        opcion = int(input("Seleccione una opción (1-5)"))
+        opcion = int(input("Seleccione una opción (1-5):    "))
     except ValueError:
         print("Opción no válida, por favor selección entre 1 y 5")
         continue
     #Despliegue de opciones
-    if opcion == 1
+    if opcion == 1:
         disponibles = capacidad_maxima - sitios_ocupados
         print(f"\n[INFO] Sitios libres para recibir vehículos:  {disponibles}")
-    elif opcion == 2
+    elif opcion == 2:
         sitios_libre = capacidad_maxima - sitios_ocupados
         if sitios_libre == 0:
             print("Lo sentimos, no quedan espacios en el camping")
@@ -34,5 +34,28 @@ while ejecutando:
                     print(f"ingreso registrado, se han ocupado {ingreso} de sitios")
             except ValueError:
                 print("Error: debe ingresar un número válido")
+    elif opcion == 3:
+        print(f"\n-- Registrar salida (Vehículos o sitios ocupados:{sitios_ocupados})")
+        if sitios_ocupados == 0:
+            print("No hay vehículos resitrados en el camping actualmente")
+        else:
+            try:
+                salida = int(input("¿Cuántos vehículos se retiran?: "))
+                if salida <= 0:
+                    print("Error: la cantidad a retirar debe ser mayor a 0")
+                elif salida > sitios_ocupados:
+                    print(f"Error: no se pueden retirar más de {sitios_ocupados} vehículos")
+                else:
+                    sitios_ocupados -= salida
+                    print(f"Salida registrada, se han liberado {salida} sitios")
+            except ValueError:
+                print("Error: Debe ingresar un número entero válido")
+    elif opcion == 4:
+        porcentaje_ocupacion = (sitios_ocupados / capacidad_maxima) * 100
+        print(f"\n[ESTADO] Ocupación actual: {sitios_ocupados}/{capacidad_maxima} sitios ")
+        print(f"\n[ESTADO] EL camping está al {porcentaje_ocupacion:.1f}% de su capacidad")
+    elif opcion == 5:
+        print("Cerrando el Sistema")
+        ejecutando = False 
     else:
         print("Opción fuera de Rango")
