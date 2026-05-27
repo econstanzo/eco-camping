@@ -10,21 +10,21 @@ while ejecutando:
     print("4.-Estado actual del camping")
     print("5.-Salir")
     try:
-        opcion = int(input("Seleccion una opcion (1-5)"))
+        opcion = int(input("Seleccione una opción (1-5)"))
     except ValueError:
         print("Opción no válida, por favor selección entre 1 y 5")
         continue
     #Despliegue de opciones
     if opcion == 1
         disponibles = capacidad_maxima - sitios_ocupados
-        print(f"\n[INFO] sitios libres para recibir vehículos:  {disponibles}")
+        print(f"\n[INFO] Sitios libres para recibir vehículos:  {disponibles}")
     elif opcion == 2
         sitios_libre = capacidad_maxima - sitios_ocupados
         if sitios_libre == 0:
             print("Lo sentimos, no quedan espacios en el camping")
         else:
             try:
-                ingreso = int(input("Cuántos sitios o vehículos  van ingresar "))
+                ingreso = int(input("Cuántos sitios o vehículos  van a ingresar "))
                 if ingreso <= 0:
                     print("Error: La cantidad de ingresos debe ser mayor a 0")
                 elif ingreso > sitios_libre:
